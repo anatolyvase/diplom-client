@@ -2,7 +2,7 @@
 import { userService } from "@/services/user-service";
 import { getAccessToken, removeFromStorage } from "@/utils";
 import Cookies from "js-cookie";
-import { Moon, Store, Sun } from "lucide-react";
+import { Moon, ShoppingBasket, Store, Sun } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
@@ -69,7 +69,6 @@ export function Header() {
           <Store size="16px" />
         </a>
 
-
         <div className="hidden sm:block" id="nav-menu ">
           <ul className="flex gap-4">
             <li className="nav__item">
@@ -119,12 +118,11 @@ export function Header() {
           </ul>
         </div>
 
-
         <div>
           <span>
-            <button onClick={onChangeTheme} className="cursor-pointer">
-              {theme === "light" ? <Sun size="16px" /> : <Moon size="16px" />}
-            </button>
+            <Link href="/basket">
+              <ShoppingBasket />
+            </Link>
           </span>
         </div>
       </nav>
