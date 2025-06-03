@@ -1,45 +1,50 @@
 @import "tailwindcss";
 
 :root {
-  --header-height: 3.5rem;
-  --bg-color: hsl(220, 18%, 78%);
-  --bg-color-light: hsl(220, 18%, 86%);
-  --title-color: hsl(220, 8%, 10%);
-  --text-color: hsl(220, 4%, 32%);
-  --text-color-light: hsl(220, 4%, 55%);
-  --body-color: hsl(220, 18%, 99%);
-  --container-color: hsl(220, 18%, 97%);
-  --body-font: 'Lora', serif;
-  --biggest-font-size: 2.25rem;
-  --h1-font-size: 1.5rem;
-  --h2-font-size: 1.25rem;
-  --h3-font-size: 1rem;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
-  --smaller-font-size: .75rem;
-  --font-regular: 400;
-  --font-medium: 500;
-  --font-semi-bold: 600;
-  --z-tooltip: 10;
-  --z-fixed: 100;
+    --header-height: 3.5rem;
+    --bg-color: hsl(220, 18%, 78%);
+    --bg-color-light: hsl(220, 18%, 86%);
+    --title-color: hsl(220, 8%, 10%);
+    --text-color: hsl(220, 4%, 32%);
+    --text-color-light: hsl(220, 4%, 55%);
+    --body-color: hsl(220, 18%, 99%);
+    --container-color: hsl(220, 18%, 97%);
+    --body-font: 'Lora', serif;
+    --biggest-font-size: 2.25rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --z-tooltip: 10;
+    --z-fixed: 100;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
+}
+
+html, body, #root {
+    min-height: 100vh;
+    min-width: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
 }

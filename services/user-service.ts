@@ -1,15 +1,15 @@
-import { api } from "./axios";
+import { api, protectedApi } from "./axios";
 
 export interface User {
-  id: string,
-  email: string,
-  firstName: string,
-  lastName: string,
+  id: string;
+  email: string;
+  firstName: string;
+  lastName: string;
 }
 
 class UserService {
   async getMe() {
-    // implement
+    return protectedApi.get<User>("/users/me");
   }
 }
 
