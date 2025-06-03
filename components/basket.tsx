@@ -2,6 +2,8 @@
 import { Button } from "@/components/button";
 import { BasketProduct, basketService } from "@/services/basket-service";
 import { orderService } from "@/services/order-service";
+import { AxiosError } from "axios";
+import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import { toast } from "sonner";
 
@@ -11,6 +13,7 @@ interface Basket {
 }
 
 const Basket: React.FC = () => {
+  const router = useRouter();
   const [basket, setBasket] = React.useState<Basket>({
     products: [],
     userId: null,
@@ -40,10 +43,15 @@ const Basket: React.FC = () => {
       const { data } = await orderService.create(products);
       basketService.clear();
       setBasket({ ...basket, products: [] });
-      console.log(data);
-      toast.success("Заказ успешно создан!");
+      router.push("/orders");
+      toast.success("Заказ успешно создан!", {
+        description: `ID заказа: ${data.id}`,
+      });
     } catch (e) {
-      console.error(e);
+      if ((e as AxiosError).status === 401) {
+        router.push("/sign-in");
+        toast.error("Вы не авторизованы");
+      }
     }
   };
 
