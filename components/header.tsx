@@ -37,7 +37,9 @@ export function Header() {
           </span>
           <Store size="16px"/>
         </a>
-        <div className="nav__menu" id="nav-menu ">
+
+
+        <div className="hidden sm:block" id="nav-menu ">
           <ul className="flex gap-4">
             <li className="nav__item">
               <a href="#home" className="nav__link active-link">
@@ -69,6 +71,8 @@ export function Header() {
             </li>
           </ul>
         </div>
+
+
         <div>
             <span>
               <button onClick={onChangeTheme} className="cursor-pointer">
