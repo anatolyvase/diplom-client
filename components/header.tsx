@@ -73,21 +73,18 @@ export function Header() {
           <ul className="flex gap-4">
             <li className="nav__item">
               <a href="#home" className="nav__link active-link">
-                <i className="ri-home-smile-2-line"></i>
                 <span>Главная</span>
               </a>
             </li>
 
             <li className="nav__item">
               <a href="#new" className="nav__link">
-                <i className="ri-price-tag-3-line"></i>
                 <span>Новинки</span>
               </a>
             </li>
 
             <li className="nav__item">
               <a href="#collection" className="nav__link">
-                <i className="ri-compass-3-line"></i>
                 <span>Коллекция</span>
               </a>
             </li>
@@ -109,9 +106,7 @@ export function Header() {
                 </div>
               ) : (
                 <Link href="/sign-in" className="nav__link">
-                  <i className="ri-shopping-bag-3-line"></i>
                   <span className="auth-button">Авторизация</span>
-                  <span></span>
                 </Link>
               )}
             </li>
