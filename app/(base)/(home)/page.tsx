@@ -5,7 +5,6 @@ import { Brands } from "@/components/brands";
 import { CollectionExplore } from "@/components/collection-explore";
 import { Footer } from "@/components/footer";
 import { Hero } from "@/components/hero";
-import { House, Compass, Book, Radiation } from "lucide-react";
 
 export default async function Home() {
   return (
