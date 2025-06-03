@@ -62,7 +62,7 @@ export function Header() {
     <header
       className={`fixed flex justify-center top-0 w-full h-14 z-[1000] ${isScroll ? "bg-[var(--body-color)]" : "bg-transparent"}  transition-all duration-300`}
     >
-      <nav className="flex justify-between items-center mx-[4rem] w-full">
+      <nav className="flex justify-between items-center px-[4rem] w-full container">
         <Link href="/#home" className="flex items-center justify-center gap-1">
           <span>Dripchik</span>
           <Store size="16px" />
