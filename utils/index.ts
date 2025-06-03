@@ -1,3 +1,4 @@
+import { Product } from "@/services/product-service";
 import Cookies from "js-cookie";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";

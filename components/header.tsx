@@ -1,8 +1,7 @@
 "use client";
 import { userService } from "@/services/user-service";
 import { getAccessToken, removeFromStorage } from "@/utils";
-import Cookies from "js-cookie";
-import { Moon, ShoppingBasket, Store, Sun } from "lucide-react";
+import { ShoppingBasket, Store } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
@@ -64,29 +63,29 @@ export function Header() {
       className={`fixed flex justify-center top-0 w-full h-14 z-[1000] ${isScroll ? "bg-[var(--body-color)]" : "bg-transparent"}  transition-all duration-300`}
     >
       <nav className="flex justify-between items-center mx-[4rem] w-full">
-        <a href="#home" className="flex items-center justify-center gap-1">
+        <Link href="/#home" className="flex items-center justify-center gap-1">
           <span>Dripchik</span>
           <Store size="16px" />
-        </a>
+        </Link>
 
         <div className="hidden sm:block" id="nav-menu ">
           <ul className="flex gap-4">
             <li className="nav__item">
-              <a href="#home" className="nav__link active-link">
+              <Link href="/#home" className="nav__link active-link">
                 <span>Главная</span>
-              </a>
+              </Link>
             </li>
 
             <li className="nav__item">
-              <a href="#new" className="nav__link">
+              <Link href="/#new" className="nav__link">
                 <span>Новинки</span>
-              </a>
+              </Link>
             </li>
 
             <li className="nav__item">
-              <a href="#collection" className="nav__link">
+              <Link href="/#collection" className="nav__link">
                 <span>Коллекция</span>
-              </a>
+              </Link>
             </li>
 
             <li className="nav__Reg">

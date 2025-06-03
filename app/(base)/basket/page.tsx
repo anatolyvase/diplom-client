@@ -7,19 +7,8 @@ function BasketPage() {
       <div className="container max-w-3xl w-full px-4">
         <header className="text-3xl font-bold mb-6">Корзина</header>
 
-        <div className="bg-white rounded-2xl shadow p-6 mb-6">
-          {/* Компонент корзины — список товаров */}
+        <div className="bg-white rounded shadow p-6 mb-6">
           <Basket />
-        </div>
-
-        {/* Подвал корзины: итог и кнопка */}
-        <div className="bg-white rounded-2xl shadow p-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <div className="text-xl font-semibold">
-            Итого: <span className="text-green-600">5 490 ₽</span>
-          </div>
-          <button className="bg-green-600 hover:bg-green-700 text-white text-lg font-medium px-6 py-3 rounded-xl transition">
-            Оформить заказ
-          </button>
         </div>
       </div>
     </div>

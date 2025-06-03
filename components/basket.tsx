@@ -1,53 +1,71 @@
 "use client";
-import React from "react";
-import { Product } from "@/services/product-service";
+import { Button } from "@/components/button";
+import { BasketProduct, basketService } from "@/services/basket-service";
+import React, { useEffect } from "react";
 
 interface Basket {
-  products: Product[];
+  products: BasketProduct[];
   userId: string | null;
 }
 
 const Basket: React.FC = () => {
   const [basket, setBasket] = React.useState<Basket>({
-    userId: "123",
-    products: [
-      {
-        id: "1",
-        sex: "MALE",
-        collection: {
-          id: "1",
-          title: "title",
-          products: [],
-        },
-        title: "Футболка Oversize",
-        price: 1990,
-        imageUrl: "/images/tshirt.jpg",
-      },
-      {
-        id: "2",
-        title: "Худи с капюшоном",
-        sex: "MALE",
-        collection: {
-          id: "1",
-          title: "title",
-          products: [],
-        },
-        price: 3490,
-        imageUrl: "/images/hoodie.jpg",
-      },
-    ],
+    products: [],
+    userId: null,
   });
 
+  useEffect(() => {
+    setBasket((prev) => ({ ...prev, products: basketService.getAll() }));
+  }, []);
+
+  const handleRemove = (product: BasketProduct) => {
+    basketService.remove(product);
+    setBasket((prev) => ({ ...prev, products: basketService.getAll() }));
+  };
+
+  const totalPrice = basket.products.reduce(
+    (a, b) => a + b.price * b.quantity,
+    0,
+  );
+
   return (
-    <ul className="space-y-4">
-      {basket.products.map((product) => (
-        <BasketItem key={product.id} product={product} />
-      ))}
-    </ul>
+    <div className="flex flex-col w-full">
+      <ul className="space-y-4">
+        {basket.products.length > 0 ? (
+          basket.products.map((product) => (
+            <BasketItem
+              onRemove={handleRemove}
+              key={product.id}
+              product={product}
+            />
+          ))
+        ) : (
+          <span>Корзина пуста</span>
+        )}
+      </ul>
+      <div className="flex justify-between w-full mt-8">
+        <div className="text-xl font-semibold">
+          Итого:{" "}
+          <span className="">
+            {totalPrice.toLocaleString("ru-RU", {
+              style: "currency",
+              currency: "RUB",
+            })}
+          </span>
+        </div>
+        <Button disabled={basket.products.length === 0} size="md">
+          Оформить заказ
+        </Button>
+      </div>
+    </div>
   );
 };
 
-const BasketItem: React.FC<{ product: Product }> = ({ product }) => {
+interface BasketItemProps {
+  product: BasketProduct;
+  onRemove: (product: BasketProduct) => void;
+}
+const BasketItem: React.FC<BasketItemProps> = ({ product, onRemove }) => {
   return (
     <li className="flex items-center gap-4 bg-gray-50 rounded-xl p-4 shadow">
       <img
@@ -60,10 +78,14 @@ const BasketItem: React.FC<{ product: Product }> = ({ product }) => {
         <div className="text-sm text-gray-500">
           Коллекция: {product.collection.title}
         </div>
+        <div className="text-sm text-gray-500">Кол-во: {product.quantity}</div>
       </div>
       <div className="text-right">
         <div className="text-lg font-semibold">{product.price} ₽</div>
-        <button className="text-red-500 hover:underline text-sm mt-1 cursor-pointer">
+        <button
+          onClick={() => onRemove(product)}
+          className="text-red-500 hover:underline text-sm mt-1 cursor-pointer"
+        >
           Удалить
         </button>
       </div>

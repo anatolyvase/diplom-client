@@ -1,3 +1,6 @@
+import FemaleCollection from "@/app/(base)/(home)/ui/female-collection'";
+import MaleCollection from "@/app/(base)/(home)/ui/male-collection";
+import NewestCollection from "@/app/(base)/(home)/ui/newest-collection";
 import { Brands } from "@/components/brands";
 import { Collection } from "@/components/collection";
 import { CollectionExplore } from "@/components/collection-explore";
@@ -8,27 +11,15 @@ import { collectionService } from "@/services";
 import { House, Compass, Book, Radiation } from "lucide-react";
 
 export default async function Home() {
-  const mans = await collectionService.getMale();
-  const females = await collectionService.getFemale();
-  const newest = await collectionService.getNewest();
-
   return (
     <div className="relative  flex flex-col font-[family-name:var(--font-geist-sans)]">
       <main className="main">
         <Hero />
 
         <CollectionExplore />
-        <Collection
-          id="man_collection"
-          title="Мужская коллекция"
-          items={mans.data}
-        />
-        <Collection
-          id="women_collection"
-          title="Женская коллекция"
-          items={females.data}
-        />
-        <Collection id="new" title="Новинки" items={newest.data} />
+        <MaleCollection />
+        <FemaleCollection />
+        <NewestCollection />
 
         <div className="flex justify-center mt-6">
           <button
