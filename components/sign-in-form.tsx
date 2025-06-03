@@ -47,7 +47,10 @@ const SignInForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={onSubmit} className="flex flex-col gap-[25px] w-full">
+    <form
+      onSubmit={onSubmit}
+      className="flex flex-col gap-3 lg:gap-[25px] w-full"
+    >
       <div className="flex flex-col gap-2">
         <label htmlFor="email">
           Email <span className="text-red-500">*</span>

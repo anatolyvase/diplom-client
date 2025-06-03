@@ -67,21 +67,27 @@ interface BasketItemProps {
 }
 const BasketItem: React.FC<BasketItemProps> = ({ product, onRemove }) => {
   return (
-    <li className="flex items-center gap-4 bg-gray-50 dark:bg-gray-900 rounded-xl p-4 shadow">
+    <li className="grid grid-cols-[auto_1fr] md:flex md:items-center gap-4 bg-gray-50 dark:bg-gray-900 rounded p-4 shadow">
       <img
         src={product.imageUrl}
         alt={product.title}
         className="w-20 h-20 object-cover rounded-lg"
       />
       <div className="flex-1">
-        <div className="text-lg font-semibold">{product.title}</div>
-        <div className="text-sm text-gray-500">
+        <div className="text-base md:text-lg font-semibold">
+          {product.title}
+        </div>
+        <div className="text-xs md:text-sm text-gray-500">
           Коллекция: {product.collection.title}
         </div>
-        <div className="text-sm text-gray-500">Кол-во: {product.quantity}</div>
+        <div className="text-xs md:text-sm text-gray-500">
+          Кол-во: {product.quantity}
+        </div>
       </div>
-      <div className="text-right">
-        <div className="text-lg font-semibold">{product.price} ₽</div>
+      <div className="col-span-2 grid grid-cols-[auto_1fr] md:grid-cols-1 justify-items-end">
+        <div className="text-base md:text-lg font-semibold">
+          {product.price} ₽
+        </div>
         <button
           onClick={() => onRemove(product)}
           className="text-red-500 hover:underline text-sm mt-1 cursor-pointer"

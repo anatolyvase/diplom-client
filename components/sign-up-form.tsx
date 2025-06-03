@@ -52,7 +52,10 @@ const SignUpForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={onSubmit} className="flex flex-col gap-[25px] w-full">
+    <form
+      onSubmit={onSubmit}
+      className="flex flex-col gap-3 lg:gap-[25px] w-full"
+    >
       <div className="flex gap-[14px] w-full">
         <div className="flex flex-col gap-2 w-full">
           <label htmlFor="firstName">
