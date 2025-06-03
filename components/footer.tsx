@@ -3,11 +3,11 @@ import Link from "next/link";
 export function Footer() {
   return (
     <footer className="flex justify-center mt-[7rem] mb-[1rem]">
-      <div className="grid grid-cols-[repeat(2,max-content)] justify-between px-[3rem] container">
+      <div className="grid grid-cols-[repeat(1,max-content)] md:grid-cols-[repeat(2,max-content)] justify-center lg:justify-between px-[3rem] container gap-[1rem] lg:gap-0">
         <div>
           <a
             href="#"
-            className="mb-[.75rem] text-[var(--title-color)]"
+            className="mb-[.75rem]"
             style={{ fontSize: "var(--h2-font-size)" }}
           >
             Dripchik
@@ -22,7 +22,7 @@ export function Footer() {
             <br />
           </p>
         </div>
-        <div className="grid grid-cols-[repeat(4,max-content)] gap-[5.5rem]">
+        <div className="grid grid-cols-[repeat(2,max-content)] md:grid-cols-[repeat(4,max-content)] gap-[2rem] lg:gap-[5.5rem]">
           <div>
             <h3 className="footer__title">Компания</h3>
             <ul>

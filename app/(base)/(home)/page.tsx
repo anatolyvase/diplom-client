@@ -73,7 +73,7 @@ export default async function Home() {
       </main>
       <Footer />
 
-      <div className="sticky bottom-0 right-0 left-0 bg-white/90 py-[1rem] opacity-100 sm:opacity-0 pointer-events-auto sm:pointer-events-none transition-all duration-300 ">
+      <div className="sticky bottom-0 right-0 left-0 bg-white/90 py-[1rem] opacity-100 md:opacity-0 pointer-events-auto sm:pointer-events-none transition-all duration-300 ">
         <ul className="flex gap-6 justify-center">
           <li className="nav__item">
             <a

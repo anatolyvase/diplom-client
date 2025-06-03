@@ -7,7 +7,7 @@ export function Hero() {
       className="pt-[12rem] pb-[2rem] bg-[var(--bg-color)] dark:bg-gray-900 w-full"
       id="home"
     >
-      <div className="flex w-full  justify-center gap-4">
+      <div className="flex w-full flex-col md:flex-row justify-center items-center md:items-start gap-4">
         <div className="home__data">
           <h1 className="text-[2rem] font-[500] mb-[1rem]">Наш магазин</h1>
           <p className="text-[var(--text-color)] dark:text-inherit text-[14px]">
@@ -28,12 +28,12 @@ export function Hero() {
             <ArrowRight size={16} />
           </Link>
         </div>
-        <div className="relative pt-[4rem]">
-          <span className="absolute -top-[5rem] -right-[7rem] ">
+        <div className="relative pt-[4rem] flex gap-8">
+          <span className="z-10 md:z-0 md:absolute md:-top-[5rem] md:-right-[7rem]">
             <img src="/img/home1.png" alt="home image" width="220px" />
           </span>
-          <span className="relative z-10">
-            <img src="/img/home3" alt="home image" width="180px" />
+          <span className="absolute -top-[1rem] -right-[6rem] md:right-0 md:top-0 md:relative md:z-10 z-0">
+            <img src="/img/home3" alt="home image" width="180px"/>
           </span>
         </div>
       </div>

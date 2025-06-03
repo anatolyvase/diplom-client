@@ -9,7 +9,7 @@ export function CollectionExplore() {
       id="collection"
     >
       <div className="flex flex-col items-center">
-        <div className="flex gap-8 ml-[5rem] -mb-[8rem]">
+        <div className="flex gap-8 m-auto md:mr-0 md:mt-0 md:ml-[5rem] md:-mb-[8rem]">
           <div className="mt-[2.5rem]">
             <h2 className="text-[1.3rem] font-[500] leading-[1.8rem] mb-[.8rem]">
               Мужская <br /> Коллекция
@@ -29,7 +29,7 @@ export function CollectionExplore() {
             alt="collections"
           />
         </div>
-        <div className="flex gap-8 mr-[5rem]">
+        <div className="flex gap-8 m-auto md:ml-0 md:mt-0 md:mb-0 md:mr-[5rem]">
           <Image
             width={230}
             height={332.45}

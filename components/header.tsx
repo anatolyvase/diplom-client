@@ -59,7 +59,7 @@ export function Header() {
           <Store size="16px" />
         </Link>
 
-        <div className="hidden sm:block" id="nav-menu ">
+        <div className="hidden md:block" id="nav-menu ">
           <ul className="flex gap-4">
             <li className="nav__item">
               <Link href="/#home" className="nav__link active-link">
