@@ -2,8 +2,6 @@ import FemaleCollection from "@/app/(base)/(home)/ui/female-collection'";
 import MaleCollection from "@/app/(base)/(home)/ui/male-collection";
 import NewestCollection from "@/app/(base)/(home)/ui/newest-collection";
 import { Brands } from "@/components/brands";
-import { Button } from "@/components/button";
-import { Collection } from "@/components/collection";
 import { CollectionExplore } from "@/components/collection-explore";
 import { Footer } from "@/components/footer";
 import { Hero } from "@/components/hero";

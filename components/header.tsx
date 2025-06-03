@@ -1,4 +1,5 @@
 "use client";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { userService } from "@/services/user-service";
 import { getAccessToken, removeFromStorage } from "@/utils";
 import { ShoppingBasket, Store } from "lucide-react";
@@ -8,14 +9,8 @@ import { toast } from "sonner";
 
 export function Header() {
   const [isScroll, setIsScroll] = useState(false);
-  const [theme, setTheme] = useState("light");
   const [isAuth, setAuth] = useState(false);
   useEffect(() => {
-    const currentTheme = localStorage.getItem("theme");
-    if (currentTheme) {
-      setTheme(currentTheme);
-    }
-
     const handleScroll = () => {
       const scrollTop = document.scrollingElement?.scrollTop || 0;
       setIsScroll(scrollTop !== 0);
@@ -26,13 +21,6 @@ export function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  function onChangeTheme() {
-    const currentTheme = localStorage.getItem("theme");
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
-    localStorage.setItem("theme", newTheme);
-    setTheme(newTheme);
-  }
 
   useEffect(() => {
     const accessToken = getAccessToken();
@@ -60,7 +48,7 @@ export function Header() {
 
   return (
     <header
-      className={`fixed flex justify-center top-0 w-full h-14 z-[1000] ${isScroll ? "bg-[var(--body-color)] dark:bg-black" : "bg-transparent"}  transition-all duration-300`}
+      className={`fixed flex justify-center top-0 w-full h-14 z-[1000] ${isScroll ? "bg-[var(--body-color)] dark:bg-[#0a0a0a]" : "bg-transparent"}  transition-all duration-300`}
     >
       <nav className="flex justify-between items-center px-[4rem] w-full container">
         <Link href="/#home" className="flex items-center justify-center gap-1">
@@ -112,12 +100,11 @@ export function Header() {
           </ul>
         </div>
 
-        <div>
-          <span>
-            <Link href="/basket">
-              <ShoppingBasket />
-            </Link>
-          </span>
+        <div className="flex gap-4 items-center">
+          <Link href="/basket">
+            <ShoppingBasket />
+          </Link>
+          <ThemeToggle />
         </div>
       </nav>
     </header>

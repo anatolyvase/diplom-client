@@ -4,7 +4,7 @@ import React from "react";
 
 function SignInPage() {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-[#f8f9fb] dark:bg-gray-900">
+    <div className="flex justify-center items-center min-h-screen bg-[#f8f9fb] dark:bg-gray-900 font-[family-name:var(--font-geist-sans)]">
       <section className="relative flex flex-col items-center bg-white dark:bg-gray-800 dar drop-shadow-xl w-[800px] p-[50px] rounded">
         <Link
           className="absolute top-[25px] left-[25px] text-blue-500"

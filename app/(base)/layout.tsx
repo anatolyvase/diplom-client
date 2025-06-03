@@ -6,7 +6,7 @@ export default function BaseLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="relative">
+    <div className="relative font-[family-name:var(--font-geist-sans)]">
       <Header />
       {children}
     </div>
