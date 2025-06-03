@@ -1,21 +1,32 @@
 import { Product } from "./product-service";
-import { api } from "./axios";
+import { api, protectedApi } from "./axios";
+
+export interface OrderProduct extends Product {
+  quantity: number;
+}
 
 export interface Order {
-  id: string,
-  totalPrice: number,
-  products: Product[],
+  id: string;
+  totalPrice: number;
+  createdAt: string;
+  status: string;
+  products: OrderProduct[];
 }
 
 class OrderService {
   async findAll() {
-    return api.get<Order[]>("/orders");
+    return protectedApi.get<Order[]>("/orders");
   }
 
-  async create(products: string[]) {
-    return api.post("/orders", {
-      products
-    })
+  async create(
+    products: {
+      id: string;
+      quantity: number;
+    }[],
+  ) {
+    return protectedApi.post("/orders", {
+      products,
+    });
   }
 }
 

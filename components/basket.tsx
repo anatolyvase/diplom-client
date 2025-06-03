@@ -1,7 +1,9 @@
 "use client";
 import { Button } from "@/components/button";
 import { BasketProduct, basketService } from "@/services/basket-service";
+import { orderService } from "@/services/order-service";
 import React, { useEffect } from "react";
+import { toast } from "sonner";
 
 interface Basket {
   products: BasketProduct[];
@@ -28,6 +30,23 @@ const Basket: React.FC = () => {
     0,
   );
 
+  const createOrder = async () => {
+    const products = basket.products.map(({ id, quantity }) => ({
+      id,
+      quantity,
+    }));
+
+    try {
+      const { data } = await orderService.create(products);
+      basketService.clear();
+      setBasket({ ...basket, products: [] });
+      console.log(data);
+      toast.success("Заказ успешно создан!");
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
     <div className="flex flex-col w-full">
       <ul className="space-y-4">
@@ -53,7 +72,11 @@ const Basket: React.FC = () => {
             })}
           </span>
         </div>
-        <Button disabled={basket.products.length === 0} size="md">
+        <Button
+          onClick={createOrder}
+          disabled={basket.products.length === 0}
+          size="md"
+        >
           Оформить заказ
         </Button>
       </div>

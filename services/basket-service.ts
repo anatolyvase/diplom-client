@@ -79,6 +79,15 @@ class BasketService {
       return [];
     }
   };
+
+  clear() {
+    try {
+      let basket: { products: BasketProduct[] } = { products: [] };
+      localStorage.setItem("basket", JSON.stringify(basket));
+    } catch (error) {
+      console.error("Ошибка при очистке корзины:", error);
+    }
+  }
 }
 
 export const basketService = new BasketService();

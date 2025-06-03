@@ -4,10 +4,12 @@ import { userService } from "@/services/user-service";
 import { getAccessToken, removeFromStorage } from "@/utils";
 import { ShoppingBasket, Store } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 export function Header() {
+  const router = useRouter();
   const [isScroll, setIsScroll] = useState(false);
   const [isAuth, setAuth] = useState(false);
   useEffect(() => {
@@ -43,6 +45,7 @@ export function Header() {
   const logout = () => {
     removeFromStorage();
     setAuth(false);
+    router.refresh();
     toast.success("Вы успешно вышли из аккаунта");
   };
 
