@@ -4,8 +4,8 @@ import React from "react";
 
 function SignUpPage() {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-[#f8f9fb]">
-      <section className="relative flex flex-col items-center bg-white drop-shadow-xl w-[800px] p-[50px] rounded">
+    <div className="flex justify-center items-center min-h-screen bg-[#f8f9fb] dark:bg-gray-900">
+      <section className="relative flex flex-col items-center bg-white dark:bg-gray-800 drop-shadow-xl w-[800px] p-[50px] rounded">
         <Link
           className="absolute top-[25px] left-[25px] text-blue-500"
           href="/"

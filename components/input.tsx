@@ -33,7 +33,7 @@ const Input: React.FC<InputProps> = ({
       <input
         type={type === "password" ? (!isVisible ? type : "text") : type}
         className={cn(
-          "p-[0px_14px] text-[16px] border border-[#dadfe9] rounded h-full w-full",
+          "p-[0px_14px] text-[16px] border border-[#dadfe9] dark:border-gray-700 rounded h-full w-full",
           className,
         )}
         value={value}
@@ -44,7 +44,7 @@ const Input: React.FC<InputProps> = ({
         <button
           onClick={toggleVisible}
           type="button"
-          className=" cursor-pointer border border-[#dadfe9] aspect-square h-full flex items-center justify-center rounded"
+          className=" cursor-pointer border border-[#dadfe9] dark:border-gray-700 aspect-square h-full flex items-center justify-center rounded"
         >
           {isVisible ? <LucideEyeOff /> : <LucideEye />}
         </button>

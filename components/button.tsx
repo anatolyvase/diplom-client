@@ -20,7 +20,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       className={cn(
-        "cursor-pointer bg-black text-white disabled:opacity-40",
+        "cursor-pointer bg-black dark:bg-white dark:text-black text-white disabled:opacity-40",
         sizes[size],
         className,
       )}

@@ -4,16 +4,22 @@ import Link from "next/link";
 
 export function CollectionExplore() {
   return (
-    <section className="bg-[var(--bg-color-light)] pt-[7rem] pb-[2rem]" id="collection">
+    <section
+      className="bg-[var(--bg-color-light)] dark:bg-gray-800 pt-[7rem] pb-[2rem]"
+      id="collection"
+    >
       <div className="flex flex-col items-center">
         <div className="flex gap-8 ml-[5rem] -mb-[8rem]">
           <div className="mt-[2.5rem]">
-            <h2 className="text-[1.3rem] font-[500] leading-[1.8rem] mb-[.8rem]">Мужская <br /> Коллекция</h2>
-            <Link href="/#man_collection" className="flex items-center gap-1 hover:gap-2 transition-all duration-300">
-            <span className="font-[500] text-[.9rem]">
-              Посмотреть одежду
-            </span>
-              <ArrowRight size={16}/>
+            <h2 className="text-[1.3rem] font-[500] leading-[1.8rem] mb-[.8rem]">
+              Мужская <br /> Коллекция
+            </h2>
+            <Link
+              href="/#man_collection"
+              className="flex items-center gap-1 hover:gap-2 transition-all duration-300"
+            >
+              <span className="font-[500] text-[.9rem]">Посмотреть одежду</span>
+              <ArrowRight size={16} />
             </Link>
           </div>
           <Image
@@ -31,12 +37,15 @@ export function CollectionExplore() {
             alt="collections"
           />
           <div className="mb-[2.5rem] self-end">
-            <h2 className="text-[1.3rem] font-[500] leading-[1.8rem] mb-[.8rem]">Женская <br /> Коллекция</h2>
-            <Link href="/#women_collection" className="flex items-center gap-1 hover:gap-2 transition-all duration-300">
-            <span className="font-[500] text-[.9rem]">
-              Посмотреть одежду
-            </span>
-              <ArrowRight size={16}/>
+            <h2 className="text-[1.3rem] font-[500] leading-[1.8rem] mb-[.8rem]">
+              Женская <br /> Коллекция
+            </h2>
+            <Link
+              href="/#women_collection"
+              className="flex items-center gap-1 hover:gap-2 transition-all duration-300"
+            >
+              <span className="font-[500] text-[.9rem]">Посмотреть одежду</span>
+              <ArrowRight size={16} />
             </Link>
           </div>
         </div>

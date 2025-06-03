@@ -67,7 +67,7 @@ interface BasketItemProps {
 }
 const BasketItem: React.FC<BasketItemProps> = ({ product, onRemove }) => {
   return (
-    <li className="flex items-center gap-4 bg-gray-50 rounded-xl p-4 shadow">
+    <li className="flex items-center gap-4 bg-gray-50 dark:bg-gray-900 rounded-xl p-4 shadow">
       <img
         src={product.imageUrl}
         alt={product.title}
