@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-const domain = "localhost";
+const domain = "anatolyvase-diplom-client-fcdf.twc1.net";
 
 export const getAccessToken = () => {
   const accessToken = Cookies.get("access_token");

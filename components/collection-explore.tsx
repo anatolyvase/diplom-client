@@ -1,5 +1,4 @@
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 export function CollectionExplore() {
@@ -9,7 +8,7 @@ export function CollectionExplore() {
       id="collection"
     >
       <div className="flex flex-col items-center">
-        <div className="flex gap-8 m-auto md:mr-0 md:mt-0 md:ml-[5rem] md:-mb-[8rem]">
+        <div className="flex flex-col lg:flex-row gap-8 m-auto md:mr-0 md:mt-0 md:ml-[5rem] md:-mb-[8rem]">
           <div className="mt-[2.5rem]">
             <h2 className="text-[1.3rem] font-[500] leading-[1.8rem] mb-[.8rem]">
               Мужская <br /> Коллекция
@@ -22,17 +21,15 @@ export function CollectionExplore() {
               <ArrowRight size={16} />
             </Link>
           </div>
-          <Image
-            width={230}
-            height={332.45}
+          <img
             src="/img/collection1.png"
+            className="w-[230px] h-[332px]"
             alt="collections"
           />
         </div>
-        <div className="flex gap-8 m-auto md:ml-0 md:mt-0 md:mb-0 md:mr-[5rem]">
-          <Image
-            width={230}
-            height={332.45}
+        <div className="flex flex-col-reverse lg:flex-row mt-8 lg:mt-0 gap-0 lg:gap-8 m-auto md:ml-0 md:mt-0 md:mb-0 md:mr-[5rem]">
+          <img
+            className="w-[230px] h-[332px]"
             src="/img/collection2.png"
             alt="collections"
           />
