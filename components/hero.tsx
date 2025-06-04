@@ -4,11 +4,11 @@ import { ArrowRight } from "lucide-react";
 export function Hero() {
   return (
     <section
-      className="pt-[12rem] pb-[2rem] bg-[var(--bg-color)] dark:bg-gray-900 w-full"
+      className="pt-[12rem] pb-[2rem] bg-[var(--bg-color)] dark:bg-gray-900 w-full max-w-screen overflow-hidden"
       id="home"
     >
       <div className="flex w-full flex-col md:flex-row justify-center items-center md:items-start gap-4">
-        <div className="home__data">
+        <div className="home__data px-4">
           <h1 className="text-[2rem] lg:text-6xl font-[500] mb-[1rem]">
             Наш магазин
           </h1>
