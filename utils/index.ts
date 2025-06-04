@@ -1,4 +1,3 @@
-import { Product } from "@/services/product-service";
 import Cookies from "js-cookie";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -17,6 +16,7 @@ export const getAccessToken = () => {
 export const saveTokenStorage = (token: string) => {
   Cookies.set("access_token", token, {
     domain: process.env.NEXT_PUBLIC_DOMAIN ?? domain,
+    path: "/",
     sameSite: "strict",
     expires: 1,
   });
@@ -25,6 +25,7 @@ export const saveTokenStorage = (token: string) => {
 export const removeFromStorage = () => {
   Cookies.remove("access_token", {
     domain: process.env.NEXT_PUBLIC_DOMAIN ?? domain,
+    path: "/",
     sameSite: "strict",
   });
 };
