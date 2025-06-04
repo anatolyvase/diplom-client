@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-const domain = "anatolyvase-diplom-client-fcdf.twc1.net";
+const domain = "diplom-client-rho.vercel.app";
 
 export const getAccessToken = () => {
   const accessToken = Cookies.get("access_token");
