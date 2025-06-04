@@ -56,7 +56,7 @@ export function Header() {
       <nav className="flex justify-between items-center px-[4rem] w-full container">
         <Link href="/#home" className="flex items-center justify-center gap-1">
           <span>Dripchik</span>
-          <Store size="16px" />
+          <img src="/favicon.png" className="size-[16px]" />
         </Link>
 
         <div className="hidden md:block" id="nav-menu ">
