@@ -9,7 +9,9 @@ export function Hero() {
     >
       <div className="flex w-full flex-col md:flex-row justify-center items-center md:items-start gap-4">
         <div className="home__data">
-          <h1 className="text-[2rem] font-[500] mb-[1rem]">Наш магазин</h1>
+          <h1 className="text-[2rem] lg:text-6xl font-[500] mb-[1rem]">
+            Наш магазин
+          </h1>
           <p className="text-[var(--text-color)] dark:text-inherit text-[14px]">
             предлагает Вам широкий выбор верхней одежды
             <br />
@@ -33,7 +35,7 @@ export function Hero() {
             <img src="/img/home1.png" alt="home image" width="220px" />
           </span>
           <span className="absolute -top-[1rem] -right-[6rem] md:right-0 md:top-0 md:relative md:z-10 z-0">
-            <img src="/img/home3" alt="home image" width="180px"/>
+            <img src="/img/home3" alt="home image" width="180px" />
           </span>
         </div>
       </div>
