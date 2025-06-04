@@ -44,8 +44,8 @@ export function Header() {
 
   const logout = () => {
     removeFromStorage();
-    setAuth(false);
     router.refresh();
+    setAuth(false);
     toast.success("Вы успешно вышли из аккаунта");
   };
 

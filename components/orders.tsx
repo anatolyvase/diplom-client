@@ -1,10 +1,13 @@
 "use client";
 
 import { Order, orderService } from "@/services/order-service";
+import { AxiosError } from "axios";
+import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import { QRCodeSVG } from "qrcode.react";
 
 const Orders: React.FC = () => {
+  const router = useRouter();
   const [items, setItems] = React.useState<Order[]>([]);
 
   const load = async () => {
@@ -12,6 +15,9 @@ const Orders: React.FC = () => {
       const { data } = await orderService.findAll();
       setItems(data);
     } catch (e) {
+      if ((e as AxiosError).status === 401) {
+        router.push("/sign-in");
+      }
       console.error(e);
     }
   };
