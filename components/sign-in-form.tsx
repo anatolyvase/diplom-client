@@ -35,7 +35,7 @@ const SignInForm: React.FC = () => {
       toast.success("Вы успешно вошли в аккаунт!");
       console.log(data.tokens);
       saveTokenStorage(data.tokens.access_token);
-      router.refresh();
+      router.push("/");
     } catch (e) {
       if (e instanceof AxiosError && e.status === 401) {
         toast.error("Неверно введена почта или пароль");
