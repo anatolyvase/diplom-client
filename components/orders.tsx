@@ -16,7 +16,8 @@ const Orders: React.FC = () => {
       setItems(data);
     } catch (e) {
       if ((e as AxiosError).status === 401) {
-        router.push("/sign-in");
+        window.location.pathname = "/sign-in";
+        window.location.reload();
       }
       console.error(e);
     }
