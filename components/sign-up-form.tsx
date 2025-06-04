@@ -40,8 +40,7 @@ const SignUpForm: React.FC = () => {
       const response = await authService.signUp(data);
       toast.success("Вы успешно зарегистрировались!");
       saveTokenStorage(response.data.tokens.access_token);
-      window.location.pathname = "/";
-      window.location.reload();
+      router.push("/");
     } catch (e) {
       if (e instanceof AxiosError && e.status === 401) {
         toast.error("Неверно введена почта или пароль");
